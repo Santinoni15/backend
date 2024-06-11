@@ -1,1 +1,19 @@
+name: CI/CD Pipeline
 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Print STUDENT_ID and STUDENT_NAME
+      run: |
+        echo "Student ID: ${{ secrets.STUDENT_ID }}"
+        echo "Student Name: ${{ secrets.STUDENT_NAME }}"

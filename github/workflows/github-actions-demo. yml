@@ -17,3 +17,11 @@ jobs:
       run: |
         echo "Student ID: ${{ secrets.STUDENT_ID }}"
         echo "Student Name: ${{ secrets.STUDENT_NAME }}"
+
+stages:
+  - review
+review:
+  stage: review 
+  image: registry. gitlab.com/professor-rvenson/backend-ni-validate
+script:
+- validate
